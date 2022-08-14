@@ -52,12 +52,9 @@ lisp! {
 		))
 }
 
-fn main() {
-	let foo = lisp! {
-		(let ((x (1)) (y (2)))
-			(add (x) (y))
-			(add (x) (y))
-			)
-	};
-	println!("{}", foo);
+lisp! {
+	(defun main () -> () =>
+		(let ((foo (add (1) (200))))
+			((println!("{}", foo))))
+	)
 }
